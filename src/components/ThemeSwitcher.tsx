@@ -1,7 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
+import { Moon, Sun } from "lucide-react";
+
 const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
@@ -18,13 +19,13 @@ const ThemeSwitcher = () => {
     //${theme == "dark" ? 'light' : 'dark'}
     <div className="w-8 sm:h-8 rounded-xl justify-center m-3 hover:scale-150 animate-spin dark:animate-none">
       {theme == "dark" ? (
-        <MoonIcon
+        <Moon
           onClick={() => {
             setTheme(`${theme == "dark" ? "light" : "dark"}`);
           }}
         />
       ) : (
-        <SunIcon
+        <Sun
           onClick={() => {
             setTheme(`${theme == "dark" ? "light" : "dark"}`);
           }}
