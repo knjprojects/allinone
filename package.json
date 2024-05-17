@@ -33,6 +33,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^11.1.7",
     "lucide-react": "^0.372.0",
+    "mongodb": "^6.6.2",
     "next": "14.2.2",
     "next-sanity": "^9.0.18",
     "next-themes": "^0.3.0",
@@ -42,6 +43,7 @@
     "react-dom-confetti": "^0.2.0",
     "react-dropzone": "^14.2.3",
     "react-rnd": "^10.4.10",
+    "react-svg-curve": "^0.2.1",
     "resend": "^3.2.0",
     "sanity": "^3.42.0",
     "sharp": "^0.32.6",
@@ -51,14 +53,14 @@
     "tailwindcss-animate": "^1.0.7",
     "uploadthing": "^6.10.0",
     "zod": "^3.23.8",
-    "zustand": "^4.5.2",
-    "zustand-persist": "^0.4.0"
+    "zustand": "^4.5.2"
   },
   "devDependencies": {
     "@stylexjs/babel-plugin": "^0.6.1",
     "@types/node": "^20",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18",
+    "daisyui": "^4.11.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.2",
     "postcss": "^8",

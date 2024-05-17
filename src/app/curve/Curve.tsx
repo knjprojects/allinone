@@ -1,8 +1,17 @@
 import React from "react";
-
+import { BasisCurve } from "react-svg-curve";
 type Props = {};
 
 const Curve = (props: Props) => {
+  const data: any = [
+    [25, 50],
+    [50, 75],
+    [75, 80],
+    [100, 40],
+    [125, 30],
+    [150, 60],
+    [175, 50],
+  ];
   return (
     <div className="w-full h-screen flex">
       <div className="relative flex">
@@ -29,6 +38,16 @@ const Curve = (props: Props) => {
         </div>
         <div className="absolute top-445 left-95">
           <div>Content 4</div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <h3>
+            <code children="<BasisCurve />" />
+          </h3>
+          <svg width="200" height="100" xmlns="http://www.w3.org/2000/svg">
+            <BasisCurve data={data} />
+          </svg>
         </div>
       </div>
     </div>

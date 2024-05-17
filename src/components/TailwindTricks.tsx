@@ -36,6 +36,7 @@ const TailwindTricks = (props: Props) => {
         <div className="rounded-lg w-20 h-10 shadow-[0_0_10px_purple]"></div>
         <div className="rounded-lg w-20 h-10 shadow-[0_0_10px_theme('colors.purple.700')]"></div>
         <div className="rounded-lg w-20 h-10 shadow-neon"></div>
+        <div className="rounded-lg w-20 h-10 neon-purple"></div>
         {/*check extend in tailwindconfig, to be able to change the color of our neon shadow, we create our own custom tailwind plugin */}
       </div>
     </div>
