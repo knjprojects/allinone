@@ -14,6 +14,26 @@ const Curve = (props: Props) => {
   ];
   return (
     <div className="w-full h-screen flex">
+      <div>
+        <h1>Links</h1>
+        <ul>
+          <li>
+            <a className="hover:underline" href="/chat">
+              - Chat
+            </a>
+          </li>
+          <li>
+            <a className="hover:underline" href="/completions">
+              - Completions
+            </a>
+          </li>
+          <li>
+            <a className="hover:underline" href="/vision">
+              - Vision
+            </a>
+          </li>
+        </ul>
+      </div>
       <div className="relative flex">
         <svg className="absolute top-0 left-0" width="200" height="400">
           <path
