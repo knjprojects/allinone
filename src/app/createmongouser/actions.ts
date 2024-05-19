@@ -4,10 +4,14 @@ import { db } from "@/db";
 export const CreateMongoUser = async (requestData: {
   username: string;
   password: string;
+  email:string
 }) => {
   try {
     const user = await db.user.create({
-      data: requestData,
+      data:{
+        id: requestData.username,
+        email: requestData.email,
+      },
     });
 
     return { name: "" };

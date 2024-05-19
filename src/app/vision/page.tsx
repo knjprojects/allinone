@@ -1,7 +1,7 @@
 "use client";
 
 import { useChat } from "ai/react";
-import ChatBubble from "../components/ChatBubble";
+import ChatBubble from "@/components/ChatBubble";
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat({
