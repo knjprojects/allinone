@@ -1,5 +1,5 @@
 "use client";
-
+//this route "auth-callback" is what i specified when setting up my kindeAuth app service, this my auth callback route
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import { getAuthStatus } from "./actions";
@@ -15,6 +15,7 @@ const Page = () => {
     if (configurationId) setConfigId(configurationId);
   }, []);
   //this is my fetch function
+  //instead of just {data}= await getAuthStatus(), we use useQuery, for better fetching and caching
   const { data } = useQuery({
     queryKey: ["auth-callback"],
     queryFn: async () => await getAuthStatus(),

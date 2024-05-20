@@ -1,3 +1,4 @@
+import MediaAnimate from "@/components/MediaAnimate";
 import React from "react";
 import { BasisCurve, NaturalCurve } from "react-svg-curve";
 type Props = {};
@@ -104,6 +105,19 @@ const Curve = (props: Props) => {
               stroke="blue"
             />
           </svg>
+        </div>
+        <p>Let's test out our custom mediaanimate component I created</p>
+        <div className="">
+          <MediaAnimate
+            imagePath="/test/dog.png"
+            animateType="bounce-in"
+            location=""
+          />
+          <MediaAnimate
+            imagePath="/test/bird.png"
+            animateType="fade-in-up"
+            location=""
+          />
         </div>
       </div>
     </div>
