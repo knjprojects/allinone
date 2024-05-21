@@ -1,18 +1,25 @@
+// sidebarStore.js
+"use client"; // Because we will be needing client-side localStorage functionality
 
-import { create } from 'zustand';
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
-export type SidebarState={
-	//tempOrder:Dish[],
-    side:string,
-    changeSide: (side:any)=> void;
-	setInitialSide: (side:	string) => void;
-	//setLoading: (bool: boolean) => void;
-	//setError: (err: string) => void;
-	//setUser: (user: User) => void;
-}
+export type SidebarState = {
+  side: string;
+  changeSide: (side: string) => void;
+  setInitialSide: (side: string) => void;
+};
 
-export const useSidebarStore = create<SidebarState>((set:any) => ({
-	side:'Bio',
-	changeSide: (side:string) => set((state:SidebarState) => ({ side:side })),
-	setInitialSide: (side:string) => set((state:any) => ({ side: side })),
-}))
+export const useSidebarStore = create<SidebarState>()(
+  persist(
+    (set) => ({
+      side: "Bio",
+      changeSide: (side: string) => set(() => ({ side })),
+      setInitialSide: (side: string) => set(() => ({ side })),
+    }),
+    {
+      name: "sidebarStore", // Name for the persisted state
+      getStorage: () => localStorage, // Use localStorage to persist the state
+    }
+  )
+);

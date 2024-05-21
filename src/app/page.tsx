@@ -5,8 +5,9 @@ import { Reviews } from "@/components/Reviews";
 import { buttonVariants } from "@/components/ui/button";
 import { ArrowRight, Check, Star } from "lucide-react";
 import Link from "next/link";
-
-export default function Home() {
+import { auth } from "@/auth";
+export default async function Home() {
+  const session = await auth();
   return (
     <div className="bg-gray-800 ">
       <section>
@@ -140,7 +141,7 @@ export default function Home() {
                     It is concise and easy to digest
                   </span>
                   , Building websites on my own has been tedious with no
-                  guidance except vague and boring tutorials on youtube ."
+                  guidance except vague and boring tutorials on youtube."
                 </p>
               </div>
               <div className="flex gap-4 mt-2">

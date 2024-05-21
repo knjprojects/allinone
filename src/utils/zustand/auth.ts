@@ -1,4 +1,6 @@
 // zustandStore.js
+"use client"; // Because we will be needing client-side localStorage functionality
+
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
@@ -15,6 +17,7 @@ const useAuthStore = create<AuthState>()(
     }),
     {
       name: "authStore", // Name for the persisted state
+      getStorage: () => localStorage, // Use localStorage to persist the state
     }
   )
 );

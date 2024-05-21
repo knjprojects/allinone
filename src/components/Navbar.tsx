@@ -4,12 +4,18 @@ import { buttonVariants } from "./ui/button";
 import { ArrowRight } from "lucide-react";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import ThemeSwitcher from "./ThemeSwitcher";
+import { auth } from "@/auth";
+import SignInButton from "./SignInButton";
+import SignOutButton from "./SignOutButton";
 const Navbar = async () => {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
-
+  //next auth vs kindeAuth
+  const session = await auth();
+  const nextauthuser = session?.user!;
+  const nextauthemail = nextauthuser.email;
   const isAdmin = user?.email === process.env.ADMIN_EMAIL;
-
+  const isAdminNextAuth = nextauthemail === process.env.ADMIN_EMAIL;
   return (
     <nav className="sticky z-[100] h-14 inset-x-0 top-0 w-full border-b border-gray-200 bg-gray-800 backdrop-blur-lg transition-all">
       <MaxWidthWrapper>
@@ -86,6 +92,21 @@ const Navbar = async () => {
                   Start Course
                   <ArrowRight className="ml-1.5 h-5 w-5" />
                 </Link>
+              </>
+            )}
+            {nextauthuser ? (
+              <>
+                <div className="flex flex-row">
+                  <SignOutButton />
+                  Sign Out of github,nextauth
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="flex flex-row">
+                  <SignInButton type="github" />
+                  <p>Sign In with Github, nextauth</p>
+                </div>
               </>
             )}
             <ThemeSwitcher />
